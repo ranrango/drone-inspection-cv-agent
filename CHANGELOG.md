@@ -6,3 +6,4 @@
 - 增加样例检测输出、巡检事件归并、风险评分和报告生成。
 - 增加 CLI、FastAPI、Docker、测试和完整项目文档。
 - 增加 smoke test、examples、评估方案和路线图，提升 GitHub 展示完整度。
+- 增加 README 架构图、smoke 输出图和 v0.1.0 release notes。

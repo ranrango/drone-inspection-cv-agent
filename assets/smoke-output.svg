@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="398" viewBox="0 0 1200 398" role="img" aria-label="无人机巡检 CV Agent smoke test output">
+<rect width="1200" height="100%" rx="24" fill="#263238"/>
+<circle cx="42" cy="42" r="9" fill="#ff6b6b"/><circle cx="70" cy="42" r="9" fill="#f4a261"/><circle cx="98" cy="42" r="9" fill="#2a9d8f"/>
+<text x="128" y="49" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" fill="#d7ece8">无人机巡检 CV Agent · smoke test</text>
+<text x="44" y="92" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#9be7dc">$ python3 scripts/smoke_test.py</text>
+<text x="44" y="124" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">{</text>
+<text x="44" y="156" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">  &quot;service&quot;: &quot;drone-inspection-cv-agent&quot;,</text>
+<text x="44" y="188" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">  &quot;status&quot;: &quot;ok&quot;,</text>
+<text x="44" y="220" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">  &quot;used_detections&quot;: 4,</text>
+<text x="44" y="252" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">  &quot;event_count&quot;: 3,</text>
+<text x="44" y="284" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">  &quot;overall_risk&quot;: &quot;高&quot;,</text>
+<text x="44" y="316" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">  &quot;has_high_risk_event&quot;: true</text>
+<text x="44" y="348" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#f7fbfa">}</text>
+</svg>

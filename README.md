@@ -8,6 +8,12 @@
 
 当前版本默认使用样例检测结果演示，不提交模型权重和真实视频。真实部署时可以把 `detector.py` 中的模拟检测器替换成 YOLOv8、RT-DETR、GroundingDINO 或你的 `drone-object-detection` 权重推理入口。
 
+## 视觉概览
+
+![架构图](assets/architecture.svg)
+
+![Smoke Test 输出](assets/smoke-output.svg)
+
 ## 项目亮点
 
 | 能力 | 设计 |

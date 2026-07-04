@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="无人机巡检 CV Agent architecture diagram">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffaf4"/><stop offset="1" stop-color="#eef8f6"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#523f2e" flood-opacity="0.12"/></filter>
+</defs>
+<rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+<text x="50" y="72" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="34" font-weight="800" fill="#233238">无人机巡检 CV Agent</text>
+<text x="50" y="112" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#66747b">检测结果 -&gt; 巡检事件 -&gt; 风险评分 -&gt; 巡检报告</text>
+<rect x="50" y="148" width="1100" height="20" rx="10" fill="#2a9d8f" opacity="0.12"/>
+<rect x="50" y="235" width="188" height="132" rx="14" fill="#ffffff" stroke="#eadfd3" filter="url(#shadow)"/>
+<rect x="50" y="235" width="188" height="6" rx="3" fill="#2a9d8f"/>
+<text x="68" y="277" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#233238">无人机输入</text>
+<text x="68" y="310" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">图片 / 视频 / 抽帧</text>
+<text x="68" y="335" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">巡检任务</text>
+<path d="M 247 301.0 L 271 301.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<path d="M 271 301.0 L 261 293.0 M 271 301.0 L 261 309.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<rect x="283" y="235" width="188" height="132" rx="14" fill="#ffffff" stroke="#eadfd3" filter="url(#shadow)"/>
+<rect x="283" y="235" width="188" height="6" rx="3" fill="#2a9d8f"/>
+<text x="301" y="277" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#233238">Detector Adapter</text>
+<text x="301" y="310" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">YOLO / RT-DETR 可替换</text>
+<text x="301" y="335" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">标准 detection schema</text>
+<path d="M 480 301.0 L 504 301.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<path d="M 504 301.0 L 494 293.0 M 504 301.0 L 494 309.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<rect x="516" y="235" width="188" height="132" rx="14" fill="#ffffff" stroke="#eadfd3" filter="url(#shadow)"/>
+<rect x="516" y="235" width="188" height="6" rx="3" fill="#2a9d8f"/>
+<text x="534" y="277" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#233238">Event Builder</text>
+<text x="534" y="310" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">按区域和类别聚合</text>
+<text x="534" y="335" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">多帧事件归并</text>
+<path d="M 713 301.0 L 737 301.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<path d="M 737 301.0 L 727 293.0 M 737 301.0 L 727 309.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<rect x="749" y="235" width="188" height="132" rx="14" fill="#ffffff" stroke="#eadfd3" filter="url(#shadow)"/>
+<rect x="749" y="235" width="188" height="6" rx="3" fill="#2a9d8f"/>
+<text x="767" y="277" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#233238">Risk Engine</text>
+<text x="767" y="310" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">禁区 / 置信度 / 连续出现</text>
+<text x="767" y="335" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">高 / 中 / 低风险</text>
+<path d="M 946 301.0 L 970 301.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<path d="M 970 301.0 L 960 293.0 M 970 301.0 L 960 309.0" stroke="#e76f51" stroke-width="3" stroke-linecap="round"/>
+<rect x="982" y="235" width="188" height="132" rx="14" fill="#ffffff" stroke="#eadfd3" filter="url(#shadow)"/>
+<rect x="982" y="235" width="188" height="6" rx="3" fill="#2a9d8f"/>
+<text x="1000" y="277" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="800" fill="#233238">Inspection Report</text>
+<text x="1000" y="310" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">异常事件</text>
+<text x="1000" y="335" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">证据帧</text>
+<text x="1000" y="360" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#66747b">处置建议</text>
+<text x="50" y="455" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="15" fill="#8a979d">交付包含：FastAPI · Docker · Tests · Smoke Test · Evaluation · Roadmap</text>
+</svg>
