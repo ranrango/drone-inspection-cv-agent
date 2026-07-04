@@ -5,7 +5,9 @@ from pathlib import Path
 from .detector import event_level, filter_detections, group_events, load_detections, score_event
 
 
-def run_inspection(source: str | Path | None = None, min_confidence: float = 0.45) -> dict[str, object]:
+def run_inspection(
+    source: str | Path | None = None, min_confidence: float = 0.45
+) -> dict[str, object]:
     raw = load_detections(source)
     detections = filter_detections(raw, min_confidence=min_confidence)
     events = group_events(detections)
@@ -17,7 +19,9 @@ def run_inspection(source: str | Path | None = None, min_confidence: float = 0.4
 
     high_events = [item for item in enriched_events if item["risk_level"] == "高"]
     overall = "高" if high_events else "中" if enriched_events else "低"
-    report = generate_report(raw_count=len(raw), used_count=len(detections), events=enriched_events, overall=overall)
+    report = generate_report(
+        raw_count=len(raw), used_count=len(detections), events=enriched_events, overall=overall
+    )
     return {
         "source": str(source or "sample_data/sample_detections.json"),
         "raw_detections": len(raw),
@@ -28,7 +32,9 @@ def run_inspection(source: str | Path | None = None, min_confidence: float = 0.4
     }
 
 
-def generate_report(raw_count: int, used_count: int, events: list[dict[str, object]], overall: str) -> str:
+def generate_report(
+    raw_count: int, used_count: int, events: list[dict[str, object]], overall: str
+) -> str:
     event_lines = []
     for event in sorted(events, key=lambda item: int(item["risk_score"]), reverse=True):
         event_lines.append(
