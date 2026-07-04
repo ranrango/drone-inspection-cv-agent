@@ -36,6 +36,26 @@ pip install -e ".[dev]"
 uvicorn src.app.main:app --reload --port 8020
 ```
 
+## 一键自检
+
+```bash
+python3 scripts/smoke_test.py
+```
+
+预期输出会包含：
+
+```json
+{
+  "service": "drone-inspection-cv-agent",
+  "status": "ok",
+  "event_count": 3,
+  "overall_risk": "高",
+  "has_high_risk_event": true
+}
+```
+
+更多请求样例见 [`examples/inspect_request.json`](examples/inspect_request.json)，巡检报告检查点见 [`examples/expected_report.md`](examples/expected_report.md)。
+
 ## 与无人机检测项目的关系
 
 `drone-object-detection` 更像 CV 模型基线：数据转换、训练、验证、推理。本项目更像业务交付层：把模型输出接入巡检流程，生成面向业务方的事件、风险等级和报告。
@@ -58,7 +78,9 @@ uvicorn src.app.main:app --reload --port 8020
 │   ├── main.py           # FastAPI 入口
 │   └── cli.py            # 命令行入口
 ├── sample_data/          # 样例检测输出和航线配置
-├── docs/                 # 架构、API、部署、复现、面试稿
+├── examples/             # 请求样例和预期报告
+├── scripts/              # smoke test 等工程脚本
+├── docs/                 # 架构、API、部署、评估、路线图、面试稿
 ├── tests/
 ├── Dockerfile
 ├── docker-compose.yml
@@ -71,3 +93,8 @@ uvicorn src.app.main:app --reload --port 8020
 - 当前样例检测器不做真实图像推理，只演示 Agent 工程链路。
 - 真实上线需要接入视频抽帧、模型推理、GPU 调度和结果落库。
 - 风险规则是可解释基线，生产应结合业务规则和人工标注持续校准。
+
+## 评估与路线图
+
+- [`docs/evaluation.md`](docs/evaluation.md)：覆盖检测准确率、事件准确率、误报率、告警召回和报告可用性。
+- [`docs/roadmap.md`](docs/roadmap.md)：说明如何从样例检测结果升级到真实 YOLO 推理、轨迹聚合、工单告警和 GPU 部署。

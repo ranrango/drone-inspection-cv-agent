@@ -1,0 +1,4 @@
+{
+  "source": "sample_data/sample_detections.json",
+  "min_confidence": 0.45
+}

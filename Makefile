@@ -1,7 +1,7 @@
 PYTHON ?= python3
 PORT ?= 8020
 
-.PHONY: help install install-dev install-cv run api test lint format docker-build docker-run
+.PHONY: help install install-dev install-cv run api smoke test lint format docker-build docker-run
 
 help:
 	@echo "可用命令："
@@ -10,6 +10,7 @@ help:
 	@echo "  install-cv   安装真实 CV 推理依赖"
 	@echo "  run          运行样例巡检"
 	@echo "  api          启动 FastAPI 服务"
+	@echo "  smoke        运行一键自检"
 	@echo "  test         运行测试"
 	@echo "  lint         运行 ruff 检查"
 	@echo "  format       运行 black 格式检查"
@@ -29,14 +30,17 @@ run:
 api:
 	uvicorn src.app.main:app --reload --port $(PORT)
 
+smoke:
+	$(PYTHON) scripts/smoke_test.py
+
 test:
 	$(PYTHON) -m pytest tests/ --tb=short -q
 
 lint:
-	ruff check src/ tests/
+	ruff check src/ scripts/ tests/
 
 format:
-	black --check src/ tests/
+	black --check src/ scripts/ tests/
 
 docker-build:
 	docker build -t drone-inspection-cv-agent:latest .
