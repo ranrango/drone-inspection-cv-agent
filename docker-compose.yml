@@ -1,0 +1,8 @@
+services:
+  drone-inspection-agent:
+    build: .
+    ports:
+      - "8020:8020"
+    volumes:
+      - ./sample_data:/app/sample_data:ro
+      - ./outputs:/app/outputs

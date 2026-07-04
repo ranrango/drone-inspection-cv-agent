@@ -1,0 +1,43 @@
+[project]
+name = "drone-inspection-cv-agent"
+version = "0.1.0"
+description = "无人机巡检 CV Agent：把目标检测结果包装成可交付巡检报告服务"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "ranrango" }]
+keywords = ["agent", "computer-vision", "drone", "inspection", "fastapi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = ["fastapi>=0.110.0", "uvicorn[standard]>=0.27.0", "pydantic>=2.0.0"]
+
+[project.scripts]
+drone-inspection-agent = "src.app.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff", "black", "httpx"]
+cv = ["ultralytics>=8.2.0", "opencv-python>=4.8.0", "numpy>=1.24.0"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]

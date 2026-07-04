@@ -1,0 +1,10 @@
+{
+  "mission_id": "demo-20260704-001",
+  "detections": [
+    {"frame_id": "f0001", "timestamp": "2026-07-04T09:00:02", "label": "person", "confidence": 0.86, "bbox": [120, 80, 42, 96], "zone": "restricted"},
+    {"frame_id": "f0002", "timestamp": "2026-07-04T09:00:06", "label": "person", "confidence": 0.82, "bbox": [126, 84, 43, 95], "zone": "restricted"},
+    {"frame_id": "f0003", "timestamp": "2026-07-04T09:00:11", "label": "vehicle", "confidence": 0.78, "bbox": [300, 180, 120, 70], "zone": "perimeter"},
+    {"frame_id": "f0004", "timestamp": "2026-07-04T09:00:17", "label": "truck", "confidence": 0.69, "bbox": [420, 190, 160, 88], "zone": "storage"},
+    {"frame_id": "f0005", "timestamp": "2026-07-04T09:00:23", "label": "bird", "confidence": 0.41, "bbox": [60, 40, 30, 24], "zone": "sky"}
+  ]
+}

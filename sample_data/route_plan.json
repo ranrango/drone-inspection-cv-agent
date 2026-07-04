@@ -1,0 +1,7 @@
+{
+  "mission_id": "demo-20260704-001",
+  "route_name": "北区围界巡检",
+  "risk_zones": ["restricted", "storage", "perimeter"],
+  "normal_objects": ["maintenance_vehicle"],
+  "alert_objects": ["person", "vehicle", "truck"]
+}
