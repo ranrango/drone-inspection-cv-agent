@@ -13,6 +13,16 @@ uvicorn src.app.main:app --host 0.0.0.0 --port 8020
 docker compose up --build
 ```
 
+## 交付验收命令
+
+```bash
+make test
+make smoke
+make docker-build
+```
+
+CI 会执行同样的核心检查，确保 API、样例巡检 smoke 和 Docker 镜像构建都能通过。
+
 ## 接入真实模型
 
 1. 在 `detector.py` 中新增 `YoloDetector` 或 `ModelBackend`。

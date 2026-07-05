@@ -14,6 +14,8 @@ help:
 	@echo "  test         运行测试"
 	@echo "  lint         运行 ruff 检查"
 	@echo "  format       运行 black 格式检查"
+	@echo "  docker-build 构建镜像"
+	@echo "  docker-run   运行容器"
 
 install:
 	$(PYTHON) -m pip install -e .
