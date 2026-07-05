@@ -1,7 +1,7 @@
 PYTHON ?= python3
 PORT ?= 8020
 
-.PHONY: help install install-dev install-cv run api smoke test lint format docker-build docker-run
+.PHONY: help install install-dev install-cv check release-check run api smoke test lint format docker-build docker-run
 
 help:
 	@echo "可用命令："
@@ -10,6 +10,8 @@ help:
 	@echo "  install-cv   安装真实 CV 推理依赖"
 	@echo "  run          运行样例巡检"
 	@echo "  api          启动 FastAPI 服务"
+	@echo "  check        本地常规验收"
+	@echo "  release-check 交付验收，包含 Docker 构建"
 	@echo "  smoke        运行一键自检"
 	@echo "  test         运行测试"
 	@echo "  lint         运行 ruff 检查"
@@ -25,6 +27,10 @@ install-dev:
 
 install-cv:
 	$(PYTHON) -m pip install -e ".[dev,cv]"
+
+check: test smoke lint format
+
+release-check: check docker-build
 
 run:
 	$(PYTHON) -m src.app.cli --source sample_data/sample_detections.json
