@@ -29,6 +29,18 @@ make release-check
 
 `release-check` 会额外执行 Docker 镜像构建；CI 会执行同样的交付验收命令，确保 API、样例巡检 smoke、代码格式和 Docker 镜像构建都能通过。
 
+只验证容器能启动并通过健康检查：
+
+```bash
+make container-check
+```
+
+容器内置 Docker `HEALTHCHECK`，`docker compose ps` 可以看到服务健康状态。健康检查访问：
+
+```text
+http://127.0.0.1:8020/health
+```
+
 ## 接入真实模型
 
 1. 在 `detector.py` 中新增 `YoloDetector` 或 `ModelBackend`。
